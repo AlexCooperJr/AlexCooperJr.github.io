@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+        <style>
+        body{
+            background-image: url("RSC/starry.webp");
+        }
+        #spCRT{
+            height: 450px;
+            width:500px;
+            position: absolute;
+            top:700px;
+            left: 550px;
+            
+        }
+        #spidey-show{
+            left:575px;
+            position:absolute;
+            top:730px;
+            height: 350px;
+            width: 440px;
+        
+            
+        }
+    #top{
+            object-fit: contain;
+            width:1527px;
+            height:100px;
+        }
+        audio{
+            margin-left: 40%;;
+        }
+        figure{
+            position: absolute;
+                color:white;
+                font-family: "Pixelify Sans";
+                font-size:medium;
+                background-color:rgb(28, 28, 93);
+                padding: 3px 6px;
+                border:1px solid rgb(255, 255, 255);
+                border-radius: 10px;
+                right:10px;
+                left:900px;
+                top:730px;
+                margin-left: 175px;
+                
+           }
+        figcaption{
+            text-align: center;
+            margin:10px;
+        }
+        ul{
+            list-style-type:none;
+            border: 1px solid #ddd;
+        }
+        li{
+            margin:15px;
+            border: 1px solid #ddd;
+            padding:2px;
+        }
+        h1{
+            font-family: "Pixelify Sans";
+        }
+        
+        .satc{
+            position: absolute;
+            top:750px;
+            margin-right: 1000px;
+            margin-left:15px;
+            color:white;
+            border-color:lightgray;
+            border-style: groove;
+            padding:5px;
+        }
+        #state{
+            border-color:lightgray;
+            border-style: groove;
+            color:white;
+            padding:5px;
+        }
+        #basement{
+            position: absolute;
+            height:500px;
+            width:100%;
+            left:0px;
+            top:700px;
+        }
+        #scroll{
+            position: absolute;
+            top:400px;
+            color:white;
+            font-family: "Pixelify Sans";
+            font-size:medium;
+            background-color:red;
+            padding: 3px 6px;
+            border:1px solid black;
+            border-radius: 10px;
+            left:600px;
+        }
+        #but{
+            cursor: pointer;
+        }
+        #guide-show{
+            cursor: pointer;
+        }
+        #com{
+            position: absolute;
+            top:425px;
+            color:white;
+            font-family: "Pixelify Sans";
+            font-size:medium;
+            background-color:red;
+            padding: 3px 6px;
+            border:1px solid black;
+            border-radius: 10px;
+            left:1200px;
+        }
+        #vg{
+            position: absolute;
+            top:425px;
+            color:white;
+            font-family: "Pixelify Sans";
+            font-size:medium;
+            background-color:red;
+            padding: 3px 6px;
+            border:1px solid black;
+            border-radius: 10px;
+            left:200px;
+        }
+    
+        </style>
+    </head>
+    <body>
+        <img id="basement" src="RSC\90sbasement.png">
+        <a href="home.html"><img id="top" src="RSC\marvel_banner.gif"></a>
+        <div id="audio">
+            <audio autoplay>
+            <source src="RSC\x-men-tas-intro.mp3">
+        </audio>
+        </div>
+        <a id="com" href="comics.html"><span> To Comics</span></a>
+        <a id="vg" href="video-games.html">To Video Games</a>
+        <h4 id="state">Sup Marvel cartoons from the '90s were totally rad! With action-packed shows like Spider-Man: The Animated Series and X-Men, they brought the sickest comic book heroes to life, straight-up rockin' our TV screens. The animation was on fire, and the storylines were mad dope, making it a blast for every fan. Whether it was Spider-Man swingin' through the city or the X-Men throwin' down, these cartoons were all about the action and hitting us with those epic vibes! It was like, totally off the chain!</h4>
+        <div class="crt-container">
+            <img id="spidey-show" src="RSC\spider-man-spider-man-animated-series.gif">
+            
+            <button id="but"><img id="spCRT" class="crt" onclick="xMen()" src="RSC\crt.jpg"></button>
+        </div>
+        <div id="watchlist" class="crt">
+            <button id="guide-show" onclick="spiderman()"><figure>
+                <figcaption>Marvel Channel Guide</figcaption>
+            <ul>
+                <li>Now playing: Spider-Man The Animated Series</li>
+                <li> </li>
+                <li>Next Up: X-Men '97</li>
+                <li> </li>
+                <li>Later: The Incredible Hulk</li>
+                <li> </li>
+                <li>After That: The Fantastic Four</li>
+                <li> </li>
+                <li>Followed By: Silver Surfer</li>
+            </ul>
+            </figure>
+        </div>
+        <div class="satc">
+        <h1 id="sat">Saturday Mornings are SUPER</h3>
+        <h3>Every 90's baby knows that supa phat feeling of waking up early to catch their favorite cartoons. Something about those CRT scan lines really added a crunk flair to the shows that was one of a kind.</h1>
+        </div>
+        <h5 id="scroll">Scroll Down to Enter The Cartoon Basement!</h5>
+        <script>
+            let click=0;
+            function xMen(){
+                    var imgElement = document.getElementById("spidey-show");
+                    let img1 = "RSC/spider-man-spider-man-animated-series.gif";
+                    let img2 = "RSC/x-menrun.gif";
+                    
+                    if(imgElement==img1){
+                        imgElement.src=img1;}
+                    else{
+                        imgElement.src=img2;
+                    }   
+            }
+            function spiderman(){
+                var imgElement = document.getElementById("spidey-show");
+                let img1 = "RSC/spider-man-spider-man-animated-series.gif";
+                let img2 = "RSC/x-menrun.gif";
+                    
+                    if(imgElement==img1){
+                        imgElement.src=img1;}
+                    else{
+                        imgElement.src=img1;
+                    }  
+            }
+        </script>
+    </body>
+</html>
