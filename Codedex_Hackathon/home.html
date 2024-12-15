@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+        <!---<link rel="stylesheet" href="C:\Users\coope\OneDrive\Desktop\Computer Science(YEAR 3)\Codedex_Hackathon\styles.css"> -->
+        <title>90's Marvel</title>
+        <style>
+            #header{
+                font-family: "Pixelify Sans";
+                text-align: center;
+                font-weight: 400;
+                font-size: 50px;
+                color:white;
+                position: absolute;
+                top:150px;
+                left: 450px;
+            }
+            #comics{
+                text-align: left;
+                color:red;
+                position: absolute;
+                top:525px;
+                left:45px;
+                border-color: white;
+
+            }
+            #video-games{
+                color:red;
+                position:absolute;
+                text-align: center;
+                top:525px;
+                left:715px;
+            }
+            #cartoons{
+                text-align: right;
+                color:red;
+                position: absolute;
+                top:525px;
+                left:1355px;
+            }
+            body{
+              background-image: url("RSC/starry.webp")
+            }
+            #pow{
+                position: absolute;
+                object-fit:cover;
+                width: 1525px;
+                height: 100px;
+                top:0px;
+                left:0px
+
+            }
+            #logo{
+                object-fit: contain;
+                height: 100px;
+                width:1527px;
+            }
+            #comic-gif{
+                position:absolute;
+                top:310px;
+
+            }
+            #cartoon-gif{
+                position: absolute;
+                top:310px;
+                left:1250px;
+            }
+            #game-gif{
+                position: absolute;
+                top:310px;
+                left:630px;
+                height:200px;
+            }
+            #state{
+                position: absolute;
+                top:200px;
+                left: 70px;
+                right:70px;
+                color: white;
+                border-color:lightgray;
+                border-style: groove;
+
+            }
+            .cm-btn{
+                color:white;
+                font-family: "Pixelify Sans";
+                font-size:medium;
+                background-color:red;
+                cursor:pointer;
+                float:right;
+                padding: 3px 6px;
+                border:1px solid black;
+                border-radius: 10px;
+                position: absolute;
+                top:535px;
+                left:45px;
+            }
+            .vg-btn{
+                color:white;
+                font-family: "Pixelify Sans";
+                font-size:medium;
+                background-color:red;
+                cursor:pointer;
+                float:right;
+                padding: 3px 6px;
+                border:1px solid black;
+                border-radius: 10px;
+                position: absolute;
+                top:535px;
+                left:715px;
+            }
+            .ct-btn{
+                color:white;
+                font-family: "Pixelify Sans";
+                font-size:medium;
+                background-color:red;
+                cursor:pointer;
+                float:right;
+                padding: 3px 6px;
+                border:1px solid black;
+                border-radius: 10px;
+                position: absolute;
+                top:535px;
+                left:1355px;
+            }
+            #sign{
+                color:white;
+                font-family: "Pixelify Sans";
+                font-size:medium;
+                background-color:red;
+                cursor:pointer;
+                float:right;
+                padding: 3px 6px;
+                border:1px solid black;
+                border-radius: 10px;
+                position: absolute;
+                top:710px;
+                left:580px;
+            }
+            #h2{
+                color:white;
+                font-family: "Pixelify Sans";
+                font-size:medium;
+                background-color:red;
+                padding: 3px 6px;
+                border:1px solid black;
+                border-radius: 10px;
+                position: absolute;
+                top:660px;
+                left:720px;
+            }
+            #list-container{
+                position: absolute;
+                top:610px;
+                left:720px;
+                text-align: center;
+                }
+           ul{
+                color:white;
+                font-family: "Pixelify Sans";
+                font-size:medium;
+                background-color:red;
+                padding: 3px 6px;
+                border:1px solid black;
+                border-radius: 10px;
+                list-style-type: none;
+           }
+           #todo-form{
+                position: absolute;
+                top:580px;
+                left:660px;
+                color:white;
+                font-family: "Pixelify Sans";
+                font-size:medium;
+                background-color:red;
+                padding: 3px 6px;
+                border:1px solid black;
+                border-radius: 10px;
+           }
+        </style>
+    </head>
+    <body>
+        <main id="main">
+            <img id="logo" src="RSC\marvel_banner.gif">
+            <header id="header" class="header_container">The 90's are SUPER with Marvel</header>
+            <p></p>
+            <h4 id="state">Hello True Believers, Marvel in the '90s was totally off the hook! With comic runs like X-Men and Spider-Man, they brought the heat with wild storylines, sick artwork, and heroes who were straight-up legends. The action was non-stop, and every issue had you on the edge of your seat, like, "No way!" Plus, the vibe was all about big-time crossover events, with every character from Wolverine to Captain America getting in on the action. It was a totally rad time to be a fan, and Marvel was keepin’ it fresh with epic battles and mad drama! Enjoy surfing the through some of our 90's media and we will catch you on the flipside!</h4>
+            <p></p>
+            <img id="comic-gif" src="RSC\marvelanim2.gif">
+            <a href="comics.html"><span class="cm-btn">Comics</span></a>
+            <img id="game-gif" src="RSC\beat-em-up-arcade.gif">
+            <a href="video-games.html"><span class="vg-btn">Video Games</span></a>
+            <p></p>
+            
+            <img id="cartoon-gif" align="right" src="RSC\WolverinePops.gif">
+            <a href="cartoons.html">><span class="ct-btn">Cartoons</span></a>
+            <div id="todo-form">
+                <input type="text" id="input-box" name="input_box" placeholder="Sign Our Guestbook">
+                <button id="input-button" onclick="addTask()">Submit</button>
+            </div>
+            <ul id="list-container">Guestbook</ul>
+          </div>
+        </main>
+        <script>
+            const inputBox= document.getElementById("input-box");
+            const listContainer=document.getElementById("list-container");
+            function addTask(){
+            const name= inputBox.value.trim();
+            if(!name){
+                alert("Please Input a Name");
+            return;}
+
+            alert("Excelsior "+name+"!");
+            
+
+            const li = document.createElement("li");
+
+            li.innerHTML = `
+            <label>
+            <span>${name}</span>
+            </label>`;
+
+            listContainer.appendChild(li);
+            inputBox.value="";
+            const taskSpan = li.querySelector("span");
+
+            }
+        </script>
+    </body>
