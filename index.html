@@ -1,232 +1,545 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-        <!---<link rel="stylesheet" href="C:\Users\coope\OneDrive\Desktop\Computer Science(YEAR 3)\Codedex_Hackathon\styles.css"> -->
-        <title>90's Marvel</title>
-        <style>
-            #header{
-                font-family: "Pixelify Sans";
-                text-align: center;
-                font-weight: 400;
-                font-size: 50px;
-                color:white;
-                position: absolute;
-                top:150px;
-                left: 450px;
-            }
-            #comics{
-                text-align: left;
-                color:red;
-                position: absolute;
-                top:525px;
-                left:45px;
-                border-color: white;
+<style>
+    html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
 
-            }
-            #video-games{
-                color:red;
-                position:absolute;
-                text-align: center;
-                top:525px;
-                left:715px;
-            }
-            #cartoons{
-                text-align: right;
-                color:red;
-                position: absolute;
-                top:525px;
-                left:1355px;
-            }
-            body{
-              background-image: url("RSC/starry.webp")
-            }
-            #pow{
-                position: absolute;
-                object-fit:cover;
-                width: 1525px;
-                height: 100px;
-                top:0px;
-                left:0px
+body {
+    font-family: Arial, sans-serif;
+}
 
-            }
-            #logo{
-                object-fit: contain;
-                height: 100px;
-                width:1527px;
-            }
-            #comic-gif{
-                position:absolute;
-                top:310px;
+    /* Full-page background */
+   .container {
+    min-height: 100vh;
+    width: 100%;
+    
+    --color: #b0b0b0;
 
-            }
-            #cartoon-gif{
-                position: absolute;
-                top:310px;
-                left:1250px;
-            }
-            #game-gif{
-                position: absolute;
-                top:310px;
-                left:630px;
-                height:200px;
-            }
-            #state{
-                position: absolute;
-                top:200px;
-                left: 70px;
-                right:70px;
-                color: white;
-                border-color:lightgray;
-                border-style: groove;
+    background-color: #ffffff;
 
-            }
-            .cm-btn{
-                color:white;
-                font-family: "Pixelify Sans";
-                font-size:medium;
-                background-color:red;
-                cursor:pointer;
-                float:right;
-                padding: 3px 6px;
-                border:1px solid black;
-                border-radius: 10px;
-                position: absolute;
-                top:535px;
-                left:45px;
-            }
-            .vg-btn{
-                color:white;
-                font-family: "Pixelify Sans";
-                font-size:medium;
-                background-color:red;
-                cursor:pointer;
-                float:right;
-                padding: 3px 6px;
-                border:1px solid black;
-                border-radius: 10px;
-                position: absolute;
-                top:535px;
-                left:715px;
-            }
-            .ct-btn{
-                color:white;
-                font-family: "Pixelify Sans";
-                font-size:medium;
-                background-color:red;
-                cursor:pointer;
-                float:right;
-                padding: 3px 6px;
-                border:1px solid black;
-                border-radius: 10px;
-                position: absolute;
-                top:535px;
-                left:1355px;
-            }
-            #sign{
-                color:white;
-                font-family: "Pixelify Sans";
-                font-size:medium;
-                background-color:red;
-                cursor:pointer;
-                float:right;
-                padding: 3px 6px;
-                border:1px solid black;
-                border-radius: 10px;
-                position: absolute;
-                top:710px;
-                left:580px;
-            }
-            #h2{
-                color:white;
-                font-family: "Pixelify Sans";
-                font-size:medium;
-                background-color:red;
-                padding: 3px 6px;
-                border:1px solid black;
-                border-radius: 10px;
-                position: absolute;
-                top:660px;
-                left:720px;
-            }
-            #list-container{
-                position: absolute;
-                top:610px;
-                left:720px;
-                text-align: center;
-                }
-           ul{
-                color:white;
-                font-family: "Pixelify Sans";
-                font-size:medium;
-                background-color:red;
-                padding: 3px 6px;
-                border:1px solid black;
-                border-radius: 10px;
-                list-style-type: none;
-           }
-           #todo-form{
-                position: absolute;
-                top:580px;
-                left:660px;
-                color:white;
-                font-family: "Pixelify Sans";
-                font-size:medium;
-                background-color:red;
-                padding: 3px 6px;
-                border:1px solid black;
-                border-radius: 10px;
-           }
-        </style>
-    </head>
-    <body>
-        <main id="main">
-            <img id="logo" src="RSC\marvel_banner.gif">
-            <header id="header" class="header_container">The 90's are SUPER with Marvel</header>
-            <p></p>
-            <h4 id="state">Hello True Believers, Marvel in the '90s was totally off the hook! With comic runs like X-Men and Spider-Man, they brought the heat with wild storylines, sick artwork, and heroes who were straight-up legends. The action was non-stop, and every issue had you on the edge of your seat, like, "No way!" Plus, the vibe was all about big-time crossover events, with every character from Wolverine to Captain America getting in on the action. It was a totally rad time to be a fan, and Marvel was keepin’ it fresh with epic battles and mad drama! Enjoy surfing the through some of our 90's media and we will catch you on the flipside!</h4>
-            <p></p>
-            <img id="comic-gif" src="RSC\marvelanim2.gif">
-            <a href="comics.html"><span class="cm-btn">Comics</span></a>
-            <img id="game-gif" src="RSC\beat-em-up-arcade.gif">
-            <a href="video-games.html"><span class="vg-btn">Video Games</span></a>
-            <p></p>
+    background-image:
+        linear-gradient(
+            0deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+        ),
+        linear-gradient(
+            90deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+        );
+
+    background-size: 55px 55px;
+}
+
+    /* Card */
+    .card {
+        --bg: #e8e8e8;
+        --contrast: #e2e0e0;
+        --grey: #93a1a1;
+
+        position: relative;
+        padding: 9px;
+        background-color: var(--bg);
+        border-radius: 35px;
+        width: 95%;
+        margin-left: 2%;
+        height: fit-content;
+
+        box-shadow:
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .card-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        background:
+            repeating-conic-gradient(
+                var(--bg) 0.0000001%,
+                var(--grey) 0.000104%
+            ) 60% 60% / 600% 600%;
+
+        filter: opacity(10%) contrast(105%);
+        border-radius: 35px;
+    }
+
+    .card-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 93vw;
+        height: fit-content;
+
+        background-color: var(--contrast);
+        border-radius: 30px;
+
+        position: relative;
+        z-index: 1;
+    }
+    /* From Uiverse.io by Mohammad-Rahme-576 */ 
+/* Container Styles */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  font-family: "Arial", sans-serif;
+  overflow: visible;
+  padding: 3px;
+
+}
+
+/* Button Styles */
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition:
+    background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    transform 0.3s ease,
+    box-shadow 0.4s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.button-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(110, 142, 251, 0.4),
+    rgba(167, 119, 227, 0.4)
+  );
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.button-content::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.6s ease-out;
+  z-index: -1;
+}
+
+.button-content:hover::before {
+  opacity: 1;
+}
+
+.button-content:hover::after {
+  transform: scale(1);
+}
+
+.button-content:hover {
+  background: linear-gradient(135deg, #a777e3, #6e8efb);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.button-content:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 12px;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: letter-spacing 0.3s ease;
+}
+
+.button-content:hover .text {
+  letter-spacing: 1px;
+}
+
+.share-icon {
+  fill: white;
+  transition:
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    fill 0.3s ease;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.button-content:hover .share-icon {
+  transform: rotate(180deg) scale(1.1);
+  fill: #ffffff;
+}
+
+/* Tooltip Styles */
+.tooltip-content {
+  position: absolute;
+  top: 102%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: white;
+  border-radius: 15px;
+  padding: 22px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    visibility 0.5s ease;
+  z-index: 100;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.tooltip-container:hover .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+/* Social Icons Styles */
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  transition:
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    background 0.3s ease,
+    box-shadow 0.4s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover::before {
+  opacity: 1;
+}
+
+.social-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+  transition:
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    fill 0.3s ease;
+  z-index: 1;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon:active {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon:hover svg {
+  transform: scale(1.2);
+  fill: white;
+}
+
+.social-icon.twitter:hover {
+  background: linear-gradient(135deg, #1da1f2, #1a91da);
+}
+
+.social-icon.facebook:hover {
+  background: linear-gradient(135deg, #1877f2, #165ed0);
+}
+
+.social-icon.linkedin:hover {
+  background: linear-gradient(135deg, #0077b5, #005e94);
+}
+
+/* Animation for Pulse Effect */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(110, 142, 251, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(110, 142, 251, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(110, 142, 251, 0);
+  }
+}
+
+.button-content {
+  animation: pulse 3s infinite;
+}
+
+/* Hover Ripple Effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.button-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: inherit;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.button-content:active::before {
+  animation: ripple 0.6s linear;
+}
+
+/* Tooltip Arrow */
+.tooltip-content::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent rgba(255, 255, 255, 0.9) transparent;
+  filter: drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.1));
+}
+
+/* Accessibility */
+.button-content:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(110, 142, 251, 0.5),
+    0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button-content:focus:not(:focus-visible) {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .button-content {
+    padding: 12px 24px;
+    border-radius: 40px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .tooltip-content {
+    width: 240px;
+    padding: 18px;
+  }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-content {
+    padding: 10px 20px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .tooltip-content {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .tooltip-content {
+    background: rgba(30, 30, 30, 0.9);
+    color: white;
+  }
+
+  .tooltip-content::before {
+    border-color: transparent transparent rgba(30, 30, 30, 0.9) transparent;
+  }
+
+  .social-icon {
+    background: #2a2a2a;
+  }
+
+  .social-icon svg {
+    fill: #e0e0e0;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .tooltip-container {
+    display: none;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .button-content,
+  .share-icon,
+  .social-icon,
+  .tooltip-content {
+    transition: none;
+  }
+
+  .button-content {
+    animation: none;
+  }
+}
+
+/* Custom Scrollbar for Tooltip Content */
+.tooltip-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tooltip-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.tooltip-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.tooltip-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+</style>
+
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-inner">
+            <img src = "src/headshot.png" alt="Headshot" style="Height:25vh; border-radius: 2%; padding: 2px;">
+            <br>
+            <text>Hi! My name is Alex Cooper and welcome to my website<br> I am a Computer Science professional with hands-on experience deploying AI and ML systems, building data pipelines, and delivering mission-critical software for industry leaders. Skilled technical writer and communicator with a proven record presenting research to senior leadership. Proficient in applied ML, full-stack development, and systems integration, with certificates in Cloud Engineering and Cyber Security. U.S. Citizen eligible for security clearance. </text>
+            <br>
             
-            <img id="cartoon-gif" align="right" src="RSC\WolverinePops.gif">
-            <a href="cartoons.html">><span class="ct-btn">Cartoons</span></a>
-            <div id="todo-form">
-                <input type="text" id="input-box" name="input_box" placeholder="Sign Our Guestbook">
-                <button id="input-button" onclick="addTask()">Submit</button>
-            </div>
-            <ul id="list-container">Guestbook</ul>
-          </div>
-        </main>
-        <script>
-            const inputBox= document.getElementById("input-box");
-            const listContainer=document.getElementById("list-container");
-            function addTask(){
-            const name= inputBox.value.trim();
-            if(!name){
-                alert("Please Input a Name");
-            return;}
 
-            alert("Excelsior "+name+"!");
-            
+        </div>
 
-            const li = document.createElement("li");
+    </div>
+    <!-- From Uiverse.io by Mohammad-Rahme-576 --> 
+<div class="tooltip-container">
+  <div class="button-content">
+    <span class="text">More Content</span>
+    <svg
+      class="share-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+    >
+      <path
+        d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"
+      ></path>
+    </svg>
+  </div>
+  <div class="tooltip-content">
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/alexmcooper/" class="social-icon linkedin">
+          <img src="src/linkedin.png">
+      </a>
+      <a href="https://github.com/AlexCooperJr" class="social-icon-github">
+    <img src="src/GitHub_Invertocat_White.png" alt="GitHub">
+</a>
+    </div>
+  </div>
+</div>
 
-            li.innerHTML = `
-            <label>
-            <span>${name}</span>
-            </label>`;
 
-            listContainer.appendChild(li);
-            inputBox.value="";
-            const taskSpan = li.querySelector("span");
-
-            }
-        </script>
-    </body>
+</div>
