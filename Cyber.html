@@ -1753,43 +1753,33 @@ body {
                 <article class="case-panel case-panel-1">
 
                     <div class="case-meta">
-                        Case 1 • High Priority • Server Troubleshooting
+                        Lab 1 • Software Installation & DLL
                     </div>
 
 
                     <h3>
-                        Printers Not Working
+                        DLL Injection
                     </h3>
 
 
                     <p>
-                        The first scenario involved a building-wide
-                        printer outage. The reporting user explained
-                        that none of the printers throughout the
-                        building were working, making this a high
-                        priority issue because of its potential
-                        business impact.
+                        The first scenario involved a hacking a process
+                        using DLL injection in a Windows OS.
                     </p>
 
 
                     <p>
-                        The first step was identity verification.
-                        The user was contacted through the ticket
-                        workflow and provided a 2FA code that could
-                        be checked against the employee directory.
-                        Once the identity was confirmed, the scope
-                        of the outage became important: multiple
-                        users and multiple floors were affected.
+                        The first step was to set up the lab enviorment properly,
+                        this will be the same enviorment used from Lab 1 to Lab 5.
                     </p>
 
 
                     <p>
-                        Because the problem was widespread, the
-                        investigation moved away from an individual
-                        workstation and toward the server environment.
-                        The server-room view showed the print server
-                        experiencing an outage. Restarting the server
-                        restored the printing service.
+                        Because the lab involved injection, a debugger "OllyDbg" was
+                       used to find the apporpriate place to jump in and rewrite the 
+                       executable code. From there we can idenfiy the PID of the process
+                       and run the command "InjectionDll.exe 1034" (1034 being the process ID).
+                       This will show the success message in the terminal.
                     </p>
 
 
@@ -1801,22 +1791,19 @@ body {
 
                         <ul>
                             <li>
-                                Verify the user before making changes.
+                                How to configure a virtual machine.
                             </li>
 
                             <li>
-                                Consider the scope of an outage before
-                                troubleshooting an individual endpoint.
+                                What is DLL and how can it be used?
                             </li>
 
                             <li>
-                                Check shared infrastructure when multiple
-                                users experience the same failure.
+                                How to use a process identifyer.
                             </li>
 
                             <li>
-                                Verify the solution with the reporting user
-                                before closing the ticket.
+                                How to naviagte and use a debugger.
                             </li>
                         </ul>
 
@@ -1842,38 +1829,34 @@ body {
                 <article class="case-panel case-panel-2">
 
                     <div class="case-meta">
-                        Case 2 • High Priority • Remote Support
+                        Lab 2 • Removing a pop-up
                     </div>
 
 
                     <h3>
-                        Incorrect Clock on User End
+                        Disbale a "nag" screen
                     </h3>
 
 
                     <p>
-                        This case involved a user whose computer clock
-                        was set to the wrong time zone. The mismatch
-                        was causing confusion and had already resulted
-                        in missed meetings.
+                        This case involved a case where a "nag" screen would repeatably pop-up on the GUI.
+                        This closely mirrors some behavior of real world malware that renders a device unusable 
+                        due to constantly blocking the screen. This screen is diabled with two methods in this lab
                     </p>
 
 
                     <p>
-                        After verifying the user's identity, the
-                        appropriate response was to remotely access
-                        the workstation because the user had already
-                        identified the likely solution: correcting
-                        the system's time-zone settings.
+                        To solve this issue one thing to do is the use a debugger like "OllyDbg" to break the code
+                        into its assembly instructions. By identifying the memory address associated with the stack frame creation
+                        we can use a "ret 4" instruciton to skip the body of the nags recurrsive call body. This disables the pop-up.
                     </p>
 
 
                     <p>
-                        From the remote desktop, the settings were
-                        opened and the Time and Language section was
-                        used to change the system from Eastern Time
-                        to Central Time. The computer was then synced
-                        to confirm that the correction had taken effect.
+                        The other method involves brute forcing a password. Malicious users may request some compenensation for this password
+                        to disable the pop-up, but we will dig through the code to find it. Within the assembly instructions a string comp is found.
+                        By analyzing this we can figure that whatever is being compared to should be the correct password. Turning the byte code into unicode reveals 
+                        the code and this can be immediately typed into the pop-ups field.
                     </p>
 
 
@@ -1885,17 +1868,16 @@ body {
 
                         <ul>
                             <li>
-                                Verify identity before remote access.
+                                Practice reading assembly instructions
                             </li>
 
                             <li>
-                                Use remote support when the problem can
-                                be resolved directly and efficiently.
+                                The idea that a malware can have multiple solutions
                             </li>
 
                             <li>
-                                Confirm that system settings match the
-                                user's actual environment.
+                                The solution to a malware related issue is as simple as 
+                                using bad coding practices on bad actors.
                             </li>
                         </ul>
 
