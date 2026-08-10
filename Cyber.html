@@ -1791,19 +1791,19 @@ body {
 
                         <ul>
                             <li>
-                                How to configure a virtual machine.
+                                How to configure a virtual machine
                             </li>
 
                             <li>
-                                What is DLL and how can it be used?
+                                What is DLL and how can it be used
                             </li>
 
                             <li>
-                                How to use a process identifyer.
+                                How to use a process identifyer
                             </li>
 
                             <li>
-                                How to naviagte and use a debugger.
+                                How to naviagte and use a debugger
                             </li>
                         </ul>
 
@@ -1877,7 +1877,7 @@ body {
 
                             <li>
                                 The solution to a malware related issue is as simple as 
-                                using bad coding practices on bad actors.
+                                using bad coding practices on bad actors
                             </li>
                         </ul>
 
@@ -1903,37 +1903,31 @@ body {
                 <article class="case-panel case-panel-3">
 
                     <div class="case-meta">
-                        Case 3 • Medium Priority • Directory Administration
+                        Lab 3 • PEfile
                     </div>
 
 
                     <h3>
-                        New Employee
+                        Analyzing a program for malware behavior
                     </h3>
 
 
                     <p>
-                        The third ticket involved creating an account
-                        for a new employee. The request contained the
-                        information needed to create the account and
-                        also specified that the new employee would
-                        need to be assigned to appropriate groups.
+                        This lab revolves around using PEfile, a tool that helps idenfity malware,
+                        in a loop over a directory to identify suspisious programs. The set up steps involved downloading and 
+                        extracting some zip files, which required disabling of Windows Defender.
                     </p>
 
 
                     <p>
-                        After verifying the reporting user's identity,
-                        the work remained within the employee directory.
-                        The new account was created using the supplied
-                        information, with particular attention paid to
-                        correctly entering names and other account details.
+                        For this assignment we were given a base code that needed to be modified and expanded upon. 
+                        The code first needed to be able to accept an entire directory and then loop through file by file looking
+                        for the breaking of certain predetermined rules, for example, if 3 or more exports share an address, flag as malware.
                     </p>
 
 
                     <p>
-                        Once the account appeared in the directory,
-                        the user's group memberships were updated to
-                        match the requirements of the employee's role.
+                        Once the loop began it would display the exports memory addresses and determine if the program is malicious.
                     </p>
 
 
@@ -1945,16 +1939,15 @@ body {
 
                         <ul>
                             <li>
-                                Verify the request before creating an account.
+                                Introduction to PEfile python library
                             </li>
 
                             <li>
-                                Accuracy matters when creating user records.
+                                Introduction to python for cyber security in Windows
                             </li>
 
                             <li>
-                                Account creation and group assignment are
-                                separate parts of the workflow.
+                                Gained practice with firewalls and rules
                             </li>
                         </ul>
 
@@ -1980,39 +1973,32 @@ body {
                 <article class="case-panel case-panel-4">
 
                     <div class="case-meta">
-                        Case 4 • Medium Priority • Access Management
+                        Case 4 • Malware detection
                     </div>
 
 
                     <h3>
-                        Moved Teams and Cannot Access New Resources
+                        Using rules and python to detect common malware
                     </h3>
 
 
                     <p>
-                        This scenario involved an employee moving to
-                        a new team and therefore requiring new access
-                        while having previous access removed.
+                         This lab revolves around using logs, 
+                        in a loop over a directory to identify suspisious programs. The set up steps involved downloading and 
+                        extracting some zip files, which required disabling of Windows Defender. Thos lab also involved setting 
+                       up a monitor to document the programs' behaviors.
                     </p>
 
 
                     <p>
-                        Unlike the previous cases, this ticket involved
-                        two people: the manager submitting the request
-                        and the employee whose access was being changed.
-                        Both identities needed to be verified before
-                        making changes.
+                        For this lab we first use the monitor to get a feel for what the code was doing and what a log
+                       might potentially look like.
                     </p>
 
 
                     <p>
-                        Once both users were verified, the directory
-                        was used to add the employee to the required
-                        group and remove the previous group. The
-                        exercise also highlighted an important
-                        distinction between permissions that can be
-                        added immediately and removals that require
-                        confirmation.
+                        From there we implemented a from scratch script to read the files, and based on a set of predetermined
+                       rules be able to detect a violation of rules indicating a malware.
                     </p>
 
 
@@ -2024,18 +2010,15 @@ body {
 
                         <ul>
                             <li>
-                                Verify all involved parties when a request
-                                affects another user's access.
+                                More practice with python for cybersecurity
                             </li>
 
                             <li>
-                                Understand the difference between granting
-                                and revoking access.
+                                Understanding how to reads logs myself and process them using a program
                             </li>
 
                             <li>
-                                Follow the organization's expected order
-                                of operations when modifying permissions.
+                                More exerience with transfering sensitive files and firewalls
                             </li>
                         </ul>
 
@@ -2061,39 +2044,31 @@ body {
                 <article class="case-panel case-panel-5">
 
                     <div class="case-meta">
-                        Case 5 • Low Priority • Account Administration
+                        Lab 5 • rootkit
                     </div>
 
 
                     <h3>
-                        Legal Name Change
+                       Using and understanding a rootkit
                     </h3>
 
 
                     <p>
-                        The final scenario involved a user who needed
-                        their last name changed following a marriage.
-                        Because the organization's email format was
-                        tied to the user's name, the email address also
-                        needed to be updated.
+                        The final lab within the windows section of this exploration involves the usage of a rootkit.
+                        The rootkit was running on my local machine and reading through the mapped ports into the VM.
                     </p>
 
 
                     <p>
-                        After verifying the user's identity, the
-                        directory profile was opened. The display name
-                        was updated, a new email address reflecting the
-                        change was assigned, and the previous address
-                        was configured as an alias.
+                        For this lab we visuaalized what the rootkit has access to, showing a long list of capabilities and 
+                        showing information that is otherwise unaccessible.
                     </p>
 
 
                     <p>
-                        The change could be observed directly after
-                        saving the profile, making this a good example
-                        of a ticket where the technician can immediately
-                        see the result rather than relying on a separate
-                        technical verification.
+                        The rootkit is very powerful and using hooks, was able to hook in and completely disable a program completely or
+                        redirct to a different program. The rootkit also hooked the termination command making it essentailly impossible to 
+                        delete for a casual user. 
                     </p>
 
 
@@ -2105,24 +2080,17 @@ body {
 
                         <ul>
                             <li>
-                                Verify identity before changing account
-                                information.
+                                Some malware are much more dangerous than surface level trojans
                             </li>
 
                             <li>
-                                Consider dependencies such as email
-                                addresses when changing user information.
+                                How malware can hook in to remain persistent from start-up
                             </li>
 
                             <li>
-                                Preserve the previous email as an alias
-                                when required.
+                                Information on kernel level malware
                             </li>
 
-                            <li>
-                                Confirm the change and communicate clearly
-                                with the user.
-                            </li>
                         </ul>
 
                     </div>
