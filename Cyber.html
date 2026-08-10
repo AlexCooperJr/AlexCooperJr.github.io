@@ -2293,39 +2293,34 @@ body {
                  <article class="case-panel case-panel-9">
 
                     <div class="case-meta">
-                        Lab 9 • 
+                        Lab 9 • Multi-Stage Attacks
                     </div>
 
 
                     <h3>
-                        Legal Name Change
+                        Combining code analysis, overflow, gadgets/ROP, and elf to make an exploit chain.
                     </h3>
 
 
                     <p>
-                        The final scenario involved a user who needed
-                        their last name changed following a marriage.
-                        Because the organization's email format was
-                        tied to the user's name, the email address also
-                        needed to be updated.
+                        This lab explorers the combination of all previous lab tasks with a new elf method to 
+                        develop a longer true multi-stage exploit. This lab begins with vulnerbility analysis checking
+                       for any developer left bad practices. We then search for our shell spawning method in this case a "ed" string for 
+                       a system call (ed is a linux cli editor). We then use the same methods as before to create a stack overflow, and craft
+                       a gadget/ROP payload.
+                       
                     </p>
 
 
                     <p>
-                        After verifying the user's identity, the
-                        directory profile was opened. The display name
-                        was updated, a new email address reflecting the
-                        change was assigned, and the previous address
-                        was configured as an alias.
+                        With a lengthy payload crafted we also add a calculation that will find us system calls. We will find the base address for
+                       a system call by calulating an offset and adding that to our found base. This gives us access to a real time means of finding dynamically assigned
+                       system call.
                     </p>
 
 
                     <p>
-                        The change could be observed directly after
-                        saving the profile, making this a good example
-                        of a ticket where the technician can immediately
-                        see the result rather than relying on a separate
-                        technical verification.
+                        With access to the shell we can capture the flag with a cat of the flag.txt file.
                     </p>
 
 
@@ -2337,23 +2332,15 @@ body {
 
                         <ul>
                             <li>
-                                Verify identity before changing account
-                                information.
+                                Sharpened skills crafting a payload to accomdate multiple methods
                             </li>
 
                             <li>
-                                Consider dependencies such as email
-                                addresses when changing user information.
+                                Used elf files for exploit
                             </li>
 
                             <li>
-                                Preserve the previous email as an alias
-                                when required.
-                            </li>
-
-                            <li>
-                                Confirm the change and communicate clearly
-                                with the user.
+                                First hand experience with flag capturing 
                             </li>
                         </ul>
 
@@ -2374,41 +2361,20 @@ body {
                  <article class="case-panel case-panel-10">
 
                     <div class="case-meta">
-                        Lab 10 • Low Priority • Account Administration
+                        Lab 10 • Rootkit
                     </div>
 
 
                     <h3>
-                        Legal Name Change
+                        Using and understanding a Linux Kernel rootkit
                     </h3>
 
 
                     <p>
-                        The final scenario involved a user who needed
-                        their last name changed following a marriage.
-                        Because the organization's email format was
-                        tied to the user's name, the email address also
-                        needed to be updated.
+                        This lab is more "passive" in the sense we are just stepping through the rootkit execution not crafting one.
+                        This kit is for QEMU a linux VM. Essentially, the rootkit takes care of the priviliages and by executing a 
+                         driver exploit, we can use escalated privilges includng access to root.
                     </p>
-
-
-                    <p>
-                        After verifying the user's identity, the
-                        directory profile was opened. The display name
-                        was updated, a new email address reflecting the
-                        change was assigned, and the previous address
-                        was configured as an alias.
-                    </p>
-
-
-                    <p>
-                        The change could be observed directly after
-                        saving the profile, making this a good example
-                        of a ticket where the technician can immediately
-                        see the result rather than relying on a separate
-                        technical verification.
-                    </p>
-
 
                     <div class="case-takeaways">
 
@@ -2418,23 +2384,11 @@ body {
 
                         <ul>
                             <li>
-                                Verify identity before changing account
-                                information.
+                                More information on rootkits this time in Linux
                             </li>
 
                             <li>
-                                Consider dependencies such as email
-                                addresses when changing user information.
-                            </li>
-
-                            <li>
-                                Preserve the previous email as an alias
-                                when required.
-                            </li>
-
-                            <li>
-                                Confirm the change and communicate clearly
-                                with the user.
+                                Showing the difference between "default" user permissions and root
                             </li>
                         </ul>
 
@@ -2442,7 +2396,7 @@ body {
 
 
                     <a
-                        href="src/Lab5 Report Alex Cooper.pdf"
+                        href="src/Lab5_Report_Alex_Cooper.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="case-study-button"
