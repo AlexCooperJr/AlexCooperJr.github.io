@@ -1,15 +1,2225 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style>
-        </style>
-    </head>
-    <body>
-        <h1>Software Engineering</h1>
-        <br>
-        <text>Here I will flex my software skills</text>
-        <script>
-            
-        </script>
-    </body>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Alex Cooper | Engineering</title>
+
+
+    <style>
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #e8e8e8;
+
+    background: #070707;
+
+}
+
+
+body {
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   SIDEBAR TOGGLE
+   ========================================================= */
+
+.sidebar-checkbox {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
+
+.sidebar-toggle {
+
+    position: fixed;
+
+    top: 22px;
+    left: 22px;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    background:
+        rgba(20, 20, 20, 0.82);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.35);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.sidebar-toggle span,
+.sidebar-toggle::before,
+.sidebar-toggle::after {
+
+    content: "";
+
+    display: block;
+
+    width: 21px;
+    height: 2px;
+
+    background: #ffffff;
+
+    border-radius: 2px;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+
+}
+
+
+.sidebar-toggle:hover {
+
+    background:
+        rgba(45, 45, 45, 0.95);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   SIDEBAR OVERLAY
+   ========================================================= */
+
+.sidebar-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 998;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar-overlay::after {
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 310px;
+    height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171717 0%,
+            #101010 55%,
+            #0b0b0b 100%
+        );
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        15px 0 50px
+        rgba(0, 0, 0, 0.45);
+
+    transform:
+        translateX(-100%);
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+/* =========================================================
+   SIDEBAR CONTENT
+   ========================================================= */
+
+.sidebar-header,
+.sidebar-nav,
+.sidebar-footer {
+
+    position: fixed;
+
+    left: 0;
+
+    width: 310px;
+
+    box-sizing: border-box;
+
+    z-index: 999;
+
+    transform:
+        translateX(-100%);
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.sidebar-header {
+
+    top: 0;
+
+    padding:
+        27px 25px 22px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+.sidebar-brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.sidebar-brand strong {
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+}
+
+
+.sidebar-brand span {
+
+    color: #888888;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   SIDEBAR CLOSE
+   ========================================================= */
+
+.sidebar-close {
+
+    position: absolute;
+
+    top: 22px;
+    right: 20px;
+
+    color: #999999;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.sidebar-close:hover {
+
+    color: #ffffff;
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+   ========================================================= */
+
+.sidebar-nav {
+
+    top: 95px;
+    bottom: 105px;
+
+    padding:
+        15px 16px;
+
+    overflow-y: auto;
+
+}
+
+
+.sidebar-section-label {
+
+    padding:
+        18px 12px 8px;
+
+    color: #666666;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.sidebar-link {
+
+    display: block;
+
+    box-sizing: border-box;
+
+    width: 100%;
+
+    padding:
+        12px 13px;
+
+    margin:
+        3px 0;
+
+    color: #cfcfcf;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.sidebar-link:hover {
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    color: #ffffff;
+
+    transform:
+        translateX(3px);
+
+}
+
+
+.sidebar-link.active {
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    color: #ffffff;
+
+    box-shadow:
+        inset 2px 0 0 #8ea4ff;
+
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+   ========================================================= */
+
+.sidebar-footer {
+
+    bottom: 0;
+
+    padding:
+        18px 25px 25px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+.sidebar-footer p {
+
+    margin: 0;
+
+    color: #666666;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   SIDEBAR OPEN STATE
+   ========================================================= */
+
+.sidebar-checkbox:checked ~ .sidebar-overlay {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.sidebar-checkbox:checked ~ .sidebar-overlay::after {
+
+    transform:
+        translateX(0);
+
+}
+
+
+.sidebar-checkbox:checked ~ .sidebar-header,
+.sidebar-checkbox:checked ~ .sidebar-nav,
+.sidebar-checkbox:checked ~ .sidebar-footer {
+
+    transform:
+        translateX(0);
+
+}
+
+
+.sidebar-checkbox:checked + .sidebar-toggle {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   PAGE BACKGROUND
+   ========================================================= */
+
+.page {
+
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding:
+        90px 6% 70px;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% -10%,
+            #303030 0%,
+            #181818 35%,
+            #0b0b0b 67%,
+            #050505 100%
+        );
+
+    background-attachment: fixed;
+
+}
+
+
+.page::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 15% 45%,
+            rgba(103, 124, 190, 0.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(130, 95, 170, 0.06),
+            transparent 30%
+        );
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.content {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+
+    margin-bottom: 55px;
+
+    max-width: 850px;
+
+}
+
+
+.eyebrow {
+
+    margin-bottom: 14px;
+
+    color: #929292;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+}
+
+
+.page-header h1 {
+
+    margin:
+        0 0 20px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 6vw, 68px);
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+
+}
+
+
+.page-header .lead {
+
+    margin: 0;
+
+    color: #bdbdbd;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.section {
+
+    margin-bottom: 70px;
+
+}
+
+
+.section-label {
+
+    margin-bottom: 14px;
+
+    color: #7e7e7e;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.section h2 {
+
+    margin:
+        0 0 20px;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+}
+
+
+.section p {
+
+    max-width: 900px;
+
+    margin:
+        0 0 20px;
+
+    color: #c3c3c3;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+.section p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   FEATURE PROJECT
+   ========================================================= */
+
+.project {
+
+    position: relative;
+
+    margin-bottom: 55px;
+
+    padding:
+        34px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.20);
+
+}
+
+
+.project::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 30px;
+
+    width: 55px;
+    height: 2px;
+
+    background:
+        #8ea4ff;
+
+}
+
+
+.project-meta {
+
+    margin-bottom: 12px;
+
+    color: #858585;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.4px;
+
+}
+
+
+.project h2 {
+
+    margin:
+        0 0 18px;
+
+    color: #ffffff;
+
+    font-size: 27px;
+
+}
+
+
+.project p {
+
+    margin:
+        0 0 18px;
+
+    color: #c0c0c0;
+
+    font-size: 15.5px;
+
+    line-height: 1.75;
+
+}
+
+
+.project p:last-of-type {
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================================
+   PROJECT TAGS
+   ========================================================= */
+
+.project-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.project-tag {
+
+    padding:
+        7px 11px;
+
+    color: #bcbcbc;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   CAMPUS CONNECT ARCHITECTURE
+   ========================================================= */
+
+.architecture {
+
+    margin:
+        25px 0 5px;
+
+    padding:
+        25px;
+
+    background:
+        rgba(0, 0, 0, 0.22);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+}
+
+
+.architecture-title {
+
+    margin-bottom: 18px;
+
+    color: #8f8f8f;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.architecture-flow {
+
+    display: flex;
+
+    align-items: stretch;
+
+    justify-content: center;
+
+    gap: 10px;
+
+}
+
+
+.architecture-node {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding:
+        18px 12px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 10px;
+
+}
+
+
+.architecture-node strong {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #eeeeee;
+
+    font-size: 13px;
+
+}
+
+
+.architecture-node span {
+
+    display: block;
+
+    color: #858585;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+.architecture-arrow {
+
+    display: flex;
+
+    align-items: center;
+
+    color: #777777;
+
+    font-size: 18px;
+
+}
+
+
+.container-note {
+
+    margin-top: 17px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    color: #858585;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.skill-card {
+
+    padding:
+        24px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+}
+
+
+.skill-card h3 {
+
+    margin:
+        0 0 14px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+}
+
+
+.skill-card p {
+
+    margin: 0;
+
+    color: #999999;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+
+}
+
+
+.skill-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+}
+
+
+.skill {
+
+    padding:
+        6px 9px;
+
+    color: #bdbdbd;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   RESUME PROMPT
+   ========================================================= */
+
+.resume-prompt {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding:
+        25px 28px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius: 14px;
+
+}
+
+
+.resume-prompt h3 {
+
+    margin:
+        0 0 7px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+}
+
+
+.resume-prompt p {
+
+    margin: 0;
+
+    color: #929292;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.resume-button {
+
+    flex-shrink: 0;
+
+    padding:
+        11px 17px;
+
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.13);
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.resume-button:hover {
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+
+    position: relative;
+
+    max-width: 1120px;
+
+    margin:
+        25px auto 0;
+
+    padding:
+        35px 0 10px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+}
+
+
+.footer-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+.footer-name {
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.footer-subtitle {
+
+    margin-top: 5px;
+
+    color: #666666;
+
+    font-size: 11px;
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    gap: 16px;
+
+}
+
+
+.footer-links a {
+
+    color: #888888;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.footer-links a:hover {
+
+    color: #ffffff;
+
+}
+
+
+.footer-bottom {
+
+    margin-top: 25px;
+
+    color: #4f4f4f;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .page {
+
+        padding:
+            80px 22px 50px;
+
+    }
+
+
+    .page-header {
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 45px;
+
+    }
+
+
+    .page-header .lead {
+
+        font-size: 17px;
+
+    }
+
+
+    .skills-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .architecture-flow {
+
+        flex-direction: column;
+
+    }
+
+
+    .architecture-arrow {
+
+        justify-content: center;
+
+        transform:
+            rotate(90deg);
+
+    }
+
+
+    .resume-prompt {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .footer-inner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .footer-links {
+
+        justify-content: flex-start;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .page {
+
+        padding:
+            75px 17px 45px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 38px;
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .project {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .architecture {
+
+        padding:
+            18px;
+
+    }
+
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR
+     ========================================================= -->
+
+<input
+    type="checkbox"
+    id="sidebar-toggle"
+    class="sidebar-checkbox"
+>
+
+
+<label
+    for="sidebar-toggle"
+    class="sidebar-toggle"
+    aria-label="Open navigation"
+>
+
+    <span></span>
+
+</label>
+
+
+<label
+    for="sidebar-toggle"
+    class="sidebar-overlay"
+></label>
+
+
+<div class="sidebar-header">
+
+
+    <div class="sidebar-brand">
+
+        <strong>
+            Alex Cooper
+        </strong>
+
+        <span>
+            Personal Portfolio
+        </span>
+
+    </div>
+
+
+    <label
+        for="sidebar-toggle"
+        class="sidebar-close"
+        aria-label="Close navigation"
+    >
+        ×
+    </label>
+
+</div>
+
+
+<nav class="sidebar-nav">
+
+
+    <div class="sidebar-section-label">
+        Portfolio
+    </div>
+
+
+    <a
+        href="index.html"
+        class="sidebar-link"
+    >
+        Home
+    </a>
+
+
+    <a
+        href="Software_Engineering.html"
+        class="sidebar-link active"
+    >
+        Engineering
+    </a>
+
+
+    <a
+        href="Service_Desk.html"
+        class="sidebar-link"
+    >
+        Service Desk
+    </a>
+
+
+    <a
+        href="Cyber.html"
+        class="sidebar-link"
+    >
+        Cybersecurity
+    </a>
+
+
+    <a
+        href="Projects.html"
+        class="sidebar-link"
+    >
+        Projects
+    </a>
+
+
+    <div class="sidebar-section-label">
+        Connect
+    </div>
+
+
+    <a
+        href="https://www.linkedin.com/in/alexmcooper/"
+        class="sidebar-link"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        LinkedIn
+    </a>
+
+
+    <a
+        href="https://github.com/AlexCooperJr"
+        class="sidebar-link"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        GitHub
+    </a>
+
+
+    <a
+        href="mailto:YOUR_EMAIL_HERE"
+        class="sidebar-link"
+    >
+        Contact
+    </a>
+
+
+</nav>
+
+
+<div class="sidebar-footer">
+
+    <p>
+        Software Engineering<br>
+        Systems • Cloud • AI • Security
+    </p>
+
+</div>
+
+
+<!-- =========================================================
+     PAGE
+     ========================================================= -->
+
+<main class="page">
+
+
+<div class="content">
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="page-header">
+
+        <div class="eyebrow">
+            Software • Systems • Infrastructure
+        </div>
+
+
+        <h1>
+            Engineering
+        </h1>
+
+
+        <p class="lead">
+            I like working on problems where the code is only part of
+            the solution. Some of the projects I've enjoyed most have
+            involved figuring out how software behaves once it leaves
+            a development machine — whether that means running across
+            cloud nodes, communicating over a network, processing
+            simulation data, or operating alongside hardware with
+            limited resources.
+        </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         ENGINEERING APPROACH
+         ===================================================== -->
+
+    <section class="section">
+
+        <div class="section-label">
+            How I approach engineering
+        </div>
+
+
+        <h2>
+            I like understanding the whole system.
+        </h2>
+
+
+        <p>
+            My engineering experience has taken me through software
+            development, systems engineering, cloud infrastructure,
+            networking, AI, and hardware/software integration. I don't
+            really see those as isolated areas. In the projects I've
+            worked on, they tend to overlap.
+        </p>
+
+
+        <p>
+            A program might work perfectly on a development machine and
+            still fail once it has to communicate with another system.
+            A model might produce useful results but require an entirely
+            different deployment strategy when it has to run on limited
+            hardware. A pipeline might produce the right numbers but
+            still be difficult to use if the results aren't presented
+            clearly.
+        </p>
+
+
+        <p>
+            Those problems are what I find interesting. I enjoy tracing
+            an issue through the layers of a system, figuring out where
+            the actual constraint is, and building something that is
+            practical enough to work outside of the lab.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         CAMPUS CONNECT
+         ===================================================== -->
+
+    <section class="section">
+
+        <div class="section-label">
+            Full-stack / Cloud / AI
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-meta">
+                Campus Connect • 2025
+            </div>
+
+
+            <h2>
+                Building a student-focused platform from the ground up
+            </h2>
+
+
+            <p>
+                Campus Connect was one of the projects where a lot of
+                my interests came together. The idea was essentially a
+                Discord-like platform built around students: users could
+                sign in, communicate through live messaging, and upload
+                files that could then be used as a source of information
+                for AI-powered features.
+            </p>
+
+
+            <p>
+                The interesting part wasn't just building the interface.
+                We had to make the different pieces of the application
+                work together. I worked with React on the front end and
+                FastAPI on the back end, while the supporting services
+                were distributed across cloud nodes. This gave me
+                practical experience with the difference between building
+                something locally and actually deploying a system made
+                up of multiple services.
+            </p>
+
+
+            <p>
+                We also built several RAG-based features as part of the
+                project. One implementation used an Ollama-hosted model
+                on one cloud node, a ChromaDB instance and embedding model
+                on another, and FastAPI to connect those services to the
+                application. The uploaded information had to be
+                pre-processed and chunked before being embedded and
+                retrieved.
+            </p>
+
+
+            <p>
+                Another part of the project used Bluesky API data to
+                build a dataset for the system. We also experimented with
+                synthetic syllabus information for a "teacher" bot aimed
+                at helping students interact with course material.
+                Rather than treating RAG as a single feature, working on
+                these variations taught me how much of the work happens
+                before a language model ever receives a prompt.
+            </p>
+
+
+            <div class="architecture">
+
+
+                <div class="architecture-title">
+                    Simplified deployment architecture
+                </div>
+
+
+                <div class="architecture-flow">
+
+
+                    <div class="architecture-node">
+
+                        <strong>
+                            React
+                        </strong>
+
+                        <span>
+                            Student-facing<br>
+                            web application
+                        </span>
+
+                    </div>
+
+
+                    <div class="architecture-arrow">
+                        →
+                    </div>
+
+
+                    <div class="architecture-node">
+
+                        <strong>
+                            FastAPI
+                        </strong>
+
+                        <span>
+                            Application API<br>
+                            and service layer
+                        </span>
+
+                    </div>
+
+
+                    <div class="architecture-arrow">
+                        →
+                    </div>
+
+
+                    <div class="architecture-node">
+
+                        <strong>
+                            Cloud Services
+                        </strong>
+
+                        <span>
+                            Containerized services<br>
+                            across cloud nodes
+                        </span>
+
+                    </div>
+
+
+                    <div class="architecture-arrow">
+                        →
+                    </div>
+
+
+                    <div class="architecture-node">
+
+                        <strong>
+                            RAG Stack
+                        </strong>
+
+                        <span>
+                            Ollama • ChromaDB<br>
+                            Embeddings
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="container-note">
+
+                    The application was developed and deployed as a
+                    collection of services rather than as one monolithic
+                    process. Containerization helped keep those services
+                    reproducible while cloud-hosted nodes allowed the
+                    heavier AI and data components to run independently
+                    from the front end.
+
+                </div>
+
+            </div>
+
+
+            <p style="margin-top: 25px;">
+
+                GitHub Actions handled deployment from the repository.
+                Changes could be pushed to the project and automatically
+                propagated to the hosted application with minimal, and
+                often effectively no, downtime. That experience gave me
+                a much better appreciation for CI/CD because I was
+                dealing with the consequences of a deployment rather
+                than simply configuring a workflow and moving on.
+
+            </p>
+
+
+            <div class="project-tags">
+
+                <span class="project-tag">React</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Ollama</span>
+                <span class="project-tag">ChromaDB</span>
+                <span class="project-tag">RAG</span>
+                <span class="project-tag">Docker</span>
+                <span class="project-tag">Cloud</span>
+                <span class="project-tag">GitHub Actions</span>
+                <span class="project-tag">Data Processing</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             EDGE CODEC
+             ================================================= -->
+
+        <div class="project">
+
+            <div class="project-meta">
+                Edge Computing / Computer Vision
+            </div>
+
+
+            <h2>
+                An image codec designed for constrained environments
+            </h2>
+
+
+            <p>
+                Another project took me in a very different direction.
+                I worked on an edge-optimized image codec intended for
+                environments where bandwidth and compute resources matter.
+                The goal was to explore whether learned image compression
+                could provide useful image quality while reducing the
+                amount of data that needed to be transmitted.
+            </p>
+
+
+            <p>
+                The target architecture involved a Raspberry Pi 5 acting
+                as the constrained encoder and a Jetson device handling
+                decoding. Because I didn't have the exact target hardware
+                available for every stage of development, I also worked
+                with constrained containerized environments to reproduce
+                some of those limitations.
+            </p>
+
+
+            <p>
+                The networking side became just as interesting as the
+                compression itself. I developed a UDP-based transfer
+                approach for the encoded binary data, including packet
+                sequencing and reassembly. Debugging the system forced me
+                to look beyond whether the file arrived and ask whether
+                every byte was being interpreted correctly by the decoder.
+            </p>
+
+
+            <p>
+                That project taught me a lot about the difference between
+                a component working in isolation and a complete system
+                working end to end. Compression performance, CPU
+                limitations, serialization, networking, and image
+                reconstruction all had to be considered together.
+            </p>
+
+
+            <div class="project-tags">
+
+                <span class="project-tag">C++</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">ONNX</span>
+                <span class="project-tag">OpenCV</span>
+                <span class="project-tag">CompressAI</span>
+                <span class="project-tag">UDP</span>
+                <span class="project-tag">Docker</span>
+                <span class="project-tag">Raspberry Pi</span>
+                <span class="project-tag">Jetson</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             LUCY
+             ================================================= -->
+
+        <div class="project">
+
+            <div class="project-meta">
+                NASA LUCY Mission • Systems Engineering
+            </div>
+
+
+            <h2>
+                Turning simulation data into something engineers could use
+            </h2>
+
+
+            <p>
+                My work connected software development with systems
+                engineering through NASA's LUCY Mission. One of the
+                projects I worked on involved building an end-to-end
+                pipeline for simulation data.
+            </p>
+
+
+            <p>
+                The pipeline took simulation output, processed the data,
+                analyzed it, and produced plots that could be used to
+                understand the behavior of the system. The work didn't
+                stop at visualization, though. Part of the process
+                involved identifying and correcting the data for relevant
+                physics properties so that the resulting information
+                could be interpreted appropriately.
+            </p>
+
+
+            <p>
+                I enjoyed this work because it was a good example of why
+                engineering software needs to be built around the problem
+                it is solving. The important question wasn't simply
+                whether the code could read a dataset. The useful question
+                was whether the complete pipeline could turn raw
+                simulation output into information that an engineer
+                could actually reason about.
+            </p>
+
+
+            <div class="project-tags">
+
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Data Pipelines</span>
+                <span class="project-tag">Simulation Data</span>
+                <span class="project-tag">Data Analysis</span>
+                <span class="project-tag">Visualization</span>
+                <span class="project-tag">Physics Corrections</span>
+                <span class="project-tag">Systems Engineering</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             L'SPACE
+             ================================================= -->
+
+        <div class="project">
+
+            <div class="project-meta">
+                L'SPACE Program • 2026
+            </div>
+
+
+            <h2>
+                Engineering is also about making a team work
+            </h2>
+
+
+            <p>
+                Through the L'SPACE program, I had the opportunity to
+                work on a mission-oriented engineering problem rather
+                than a traditional software project. I led a team of
+                eight engineers while we developed and presented a lunar
+                surface vehicle concept.
+            </p>
+
+
+            <p>
+                That experience pushed me outside of the purely technical
+                side of engineering. Requirements, design decisions,
+                documentation, presentations, and coordination all had to
+                stay aligned. I learned that a technically strong solution
+                isn't particularly useful if the team cannot explain it,
+                document it, or agree on how it should be developed.
+            </p>
+
+
+            <p>
+                It also reinforced something I've encountered throughout
+                my other projects: engineering is usually a collaborative
+                process. Writing the code is important, but understanding
+                the requirements and communicating why a decision was made
+                can be just as important.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TOOLKIT
+         ===================================================== -->
+
+    <section class="section">
+
+        <div class="section-label">
+            Technical toolkit
+        </div>
+
+
+        <h2>
+            Tools I've actually worked with
+        </h2>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Software Development
+                </h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">Python</span>
+                    <span class="skill">C</span>
+                    <span class="skill">C++</span>
+                    <span class="skill">Go</span>
+                    <span class="skill">Java</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">FastAPI</span>
+                    <span class="skill">Spring Boot</span>
+                    <span class="skill">.NET</span>
+                    <span class="skill">Git</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Systems & Debugging
+                </h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">Linux</span>
+                    <span class="skill">Windows</span>
+                    <span class="skill">gdb</span>
+                    <span class="skill">gcc</span>
+                    <span class="skill">gdc</span>
+                    <span class="skill">Wireshark</span>
+                    <span class="skill">Networking</span>
+                    <span class="skill">QEMU</span>
+                    <span class="skill">Virtualization</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Cloud & Infrastructure
+                </h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">AWS</span>
+                    <span class="skill">CloudLab</span>
+                    <span class="skill">Docker</span>
+                    <span class="skill">Kubernetes</span>
+                    <span class="skill">Terraform</span>
+                    <span class="skill">Helm</span>
+                    <span class="skill">GitHub Actions</span>
+                    <span class="skill">CI/CD</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    AI / Data
+                </h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">RAG</span>
+                    <span class="skill">LLM Integration</span>
+                    <span class="skill">Ollama</span>
+                    <span class="skill">ChromaDB</span>
+                    <span class="skill">Embeddings</span>
+                    <span class="skill">ONNX</span>
+                    <span class="skill">Computer Vision</span>
+                    <span class="skill">Data Pipelines</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RESUME
+         ===================================================== -->
+
+    <section class="section">
+
+
+        <div class="resume-prompt">
+
+
+            <div>
+
+                <h3>
+                    Want the condensed version?
+                </h3>
+
+                <p>
+                    My resume provides a quicker overview of my
+                    engineering experience, education, and technical
+                    background.
+                </p>
+
+            </div>
+
+
+            <a
+                href="src/Resume_Alex_Cooper_2026_07.pdf"
+                class="resume-button"
+                target="_blank"
+            >
+                View Resume
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site-footer">
+
+
+    <div class="footer-inner">
+
+
+        <div>
+
+            <div class="footer-name">
+                Alex Cooper
+            </div>
+
+            <div class="footer-subtitle">
+                Software Engineering • Systems • Cloud • AI
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="Software_Engineering.html">
+                Engineering
+            </a>
+
+
+            <a href="Service_Desk.html">
+                Service Desk
+            </a>
+
+
+            <a href="Cyber.html">
+                Cybersecurity
+            </a>
+
+
+            <a href="Projects.html">
+                Projects
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/alexmcooper/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+
+            <a
+                href="https://github.com/AlexCooperJr"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+
+            <a href="mailto:cooperjralex@gmail.com">
+                Contact
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Alex Cooper. Built and maintained by me.
+
+    </div>
+
+
+</footer>
+
+
+</main>
+
+</body>
+
 </html>
