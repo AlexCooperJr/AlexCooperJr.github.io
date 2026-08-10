@@ -1540,7 +1540,8 @@ body {
                 My experience in the cybersecurity certficiate program
                 gave me the foundation to continue foward in a growing field.
                 Providing me exposure to technical documentation, exploit tools,
-                and defensive best practices
+                and defensive best practices. Being able to complete hands-on labs, receive certifcation, 
+               and even compete and place 3rd overall at the PACISE conference cybersecuirty competition.
             </p>
 
         </section>
@@ -2412,39 +2413,26 @@ body {
          <article class="case-panel case-panel-11">
 
                     <div class="case-meta">
-                        Lab 11 • Low Priority • Account Administration
+                        Lab 11 • Final CTF
                     </div>
 
 
                     <h3>
-                        Legal Name Change
+                        Combining everything (except the rootkit) to capture a flag
                     </h3>
 
 
                     <p>
-                        The final scenario involved a user who needed
-                        their last name changed following a marriage.
-                        Because the organization's email format was
-                        tied to the user's name, the email address also
-                        needed to be updated.
+                        This final lab had some unique protections to test our analysis and critical thinking skills. One was NX being enable
+                       which protects the stack from having code executed right on it. This stack also had a canary which can act as an indication 
+                        that overflowing is being attempted and terminates the program before that can happen. 
                     </p>
 
 
                     <p>
-                        After verifying the user's identity, the
-                        directory profile was opened. The display name
-                        was updated, a new email address reflecting the
-                        change was assigned, and the previous address
-                        was configured as an alias.
-                    </p>
-
-
-                    <p>
-                        The change could be observed directly after
-                        saving the profile, making this a good example
-                        of a ticket where the technician can immediately
-                        see the result rather than relying on a separate
-                        technical verification.
+                        This exploit was similar to lab 4 but with the additional steps of needing to leak the canary address. By leaking some information we could
+                       dynamically assign the canary values and ensure we could work around the protection. By placing the leaked canary value we can still cuase the desired overflow,
+                       do some ROP and chain a payload together before using a system call to get a shell. Thus allowing us to cat the flag and see a nice image of Pikachu.
                     </p>
 
 
@@ -2456,23 +2444,19 @@ body {
 
                         <ul>
                             <li>
-                                Verify identity before changing account
-                                information.
+                                New topics with real world protections like Stack Canaries
                             </li>
 
                             <li>
-                                Consider dependencies such as email
-                                addresses when changing user information.
+                                Continued exploration of stack overflow, ROP, and payload creation
                             </li>
 
                             <li>
-                                Preserve the previous email as an alias
-                                when required.
+                                Crictal thinking about a plan of action
                             </li>
 
                             <li>
-                                Confirm the change and communicate clearly
-                                with the user.
+                                Reflection on everything learned from lab 6-11
                             </li>
                         </ul>
 
@@ -2509,41 +2493,19 @@ body {
 
 
             <p>
-                My technical support experience started well before I
-                moved into software and systems engineering. As a
-                Senior Technician at Valvoline Instant Oil Change,
-                I worked directly with customers and internal teams
-                to resolve hardware, software, and technology issues.
+                I always had a love of problem solving and finding the way things might work together. 
+                With this curiosity came a lot of breaking things sometimes on accident and others on purpose.
+               When I transferred to West Chester University I knew that I wanted to be part of a NSA backed cybersecurity program.
             </p>
 
 
             <p>
-                That meant troubleshooting peripherals, coordinating
-                equipment replacement and inventory, working with
-                vendors and Internet service providers, and escalating
-                problems to corporate teams when an issue required
-                additional support.
+                Computer Science is a brough tfield to study and you get to touch a lot of technologies without ever
+                getting a grasp on anything one thing. The certificate program alongside the independant work has developed my skills 
+                as a technical professional while giving the experience of taking these deep and complex topics and presenting to an audience
+                of those who are unfamiliar. 
             </p>
 
-
-            <p>
-                The part of that experience that has stayed with me
-                most is the troubleshooting process itself. A problem
-                rarely arrives with a perfect description of what is
-                wrong. You have to ask questions, gather information,
-                narrow the possibilities, make a change, and then
-                determine whether the change actually solved the problem.
-            </p>
-
-
-            <p>
-                I still approach engineering problems in much the same
-                way. Whether I'm debugging a container, investigating
-                a networking problem, working with a remote Linux
-                environment, or dealing with unfamiliar hardware,
-                I start by understanding the environment before trying
-                to fix it.
-            </p>
 
         </section>
 
@@ -2560,27 +2522,20 @@ body {
 
 
             <h2>
-                Building More Service Desk Experience
+                Building More Cybersecurity Experience
             </h2>
 
 
             <p>
-                I'm continuing to sharpen my technical support and
-                troubleshooting skills through hands-on work with a
-                service desk simulator. The goal isn't simply to
-                complete simulated tickets. I'm using the scenarios
-                to practice the habits that make troubleshooting
+                I'm continuing to sharpen my technical skills through hands-on work with a
+                upcoming CTF challenges or other useful tools and projects. The goal isn't simply to
+                complete assignments. I'm using the scenarios
+                to practice the habits that make my knowledge of security practices
                 useful in a real environment.
             </p>
 
 
-            <p>
-                That includes identifying the scope of a problem,
-                verifying users, gathering information, working through
-                the available systems, documenting what changed, and
-                communicating the result. I'm documenting that process
-                here so the page can grow alongside the work.
-            </p>
+           
 
 
             <div class="journey-highlight">
@@ -2593,35 +2548,11 @@ body {
                 <ul>
 
                     <li>
-                        Realistic service desk scenarios
+                        Labs
                     </li>
 
                     <li>
-                        Problem identification and triage
-                    </li>
-
-                    <li>
-                        Troubleshooting methodology
-                    </li>
-
-                    <li>
-                        Root cause analysis
-                    </li>
-
-                    <li>
-                        Solutions and remediation
-                    </li>
-
-                    <li>
-                        Documentation and ticket resolution
-                    </li>
-
-                    <li>
-                        Lessons learned
-                    </li>
-
-                    <li>
-                        New tools and techniques
+                        Capture the Flags (CTF)
                     </li>
 
                 </ul>
@@ -2649,7 +2580,7 @@ body {
                     color:white;
                 "
             >
-                Service Desk Skills
+                Cyber Skills
             </h2>
 
 
@@ -2659,12 +2590,11 @@ body {
                 <div class="skill-card">
 
                     <h2>
-                        Troubleshooting
+                        Analysis
                     </h2>
 
                     <p>
-                        Systematic diagnosis of hardware, software,
-                        peripheral, and connectivity problems.
+                        Systematic diagnosis of program, software, or physical vulnerabilities.
                     </p>
 
                 </div>
@@ -2673,13 +2603,11 @@ body {
                 <div class="skill-card">
 
                     <h2>
-                        User Support
+                        Research
                     </h2>
 
                     <p>
-                        Communicating technical issues with users and
-                        translating technical solutions into understandable
-                        instructions.
+                        Continued commitment to development of my skills to protect those around me.
                     </p>
 
                 </div>
@@ -2688,13 +2616,11 @@ body {
                 <div class="skill-card">
 
                     <h2>
-                        Escalation
+                        Exploits
                     </h2>
 
                     <p>
-                        Determining when an issue can be resolved locally
-                        and when it requires coordination with vendors,
-                        ISPs, or corporate technical teams.
+                        Hands-on and documented experience working with different OS to use different interfaces to make exploits.
                     </p>
 
                 </div>
@@ -2707,8 +2633,7 @@ body {
                     </h2>
 
                     <p>
-                        Peripheral troubleshooting, equipment replacement,
-                        inventory, and hardware compatibility issues.
+                        Physical security, OS knowledge.
                     </p>
 
                 </div>
@@ -2737,7 +2662,7 @@ body {
 
                     <p>
                         Clear communication and technical documentation
-                        developed through both support and engineering
+                        developed through both Windows and Linux
                         environments.
                     </p>
 
@@ -2762,7 +2687,7 @@ body {
 
                 <p>
                     I'm always open to discussing technology,
-                    engineering, IT, or future opportunities.
+                    engineering, IT, Cyber, or future opportunities.
                 </p>
 
             </div>
