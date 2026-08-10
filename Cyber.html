@@ -2110,39 +2110,31 @@ body {
                  <article class="case-panel case-panel-6">
 
                     <div class="case-meta">
-                        Case 6 • Low Priority • Account Administration
+                        Lab 6 • GDB 
                     </div>
 
 
                     <h3>
-                        Legal Name Change
+                        Using GDB and the disassemble method.
                     </h3>
 
 
                     <p>
-                        The final scenario involved a user who needed
-                        their last name changed following a marriage.
-                        Because the organization's email format was
-                        tied to the user's name, the email address also
-                        needed to be updated.
+                        The first lab for the Linux based section of this exploration
+                        is a simple introduction to the GDB debugging tool and how it
+                        works on non-malicious code. 
                     </p>
 
 
                     <p>
-                        After verifying the user's identity, the
-                        directory profile was opened. The display name
-                        was updated, a new email address reflecting the
-                        change was assigned, and the previous address
-                        was configured as an alias.
+                        After gaining access to the Linux server, we use the "gdb" command to 
+                        spawn it. From there the disassemble method will show the assmebly instructions of the method.
+                        We are also allowed to step through through the method to see how it changes over the run.
                     </p>
 
 
                     <p>
-                        The change could be observed directly after
-                        saving the profile, making this a good example
-                        of a ticket where the technician can immediately
-                        see the result rather than relying on a separate
-                        technical verification.
+                        We use this to identify what registers are doing what tasks
                     </p>
 
 
@@ -2154,23 +2146,15 @@ body {
 
                         <ul>
                             <li>
-                                Verify identity before changing account
-                                information.
+                                Familiarity in a Linux remote enviorment
                             </li>
 
                             <li>
-                                Consider dependencies such as email
-                                addresses when changing user information.
+                                The usage of GDB, a C debugger for Linux
                             </li>
 
                             <li>
-                                Preserve the previous email as an alias
-                                when required.
-                            </li>
-
-                            <li>
-                                Confirm the change and communicate clearly
-                                with the user.
+                                Idenfity registers and reading assembly
                             </li>
                         </ul>
 
@@ -2191,39 +2175,25 @@ body {
                  <article class="case-panel case-panel-7">
 
                     <div class="case-meta">
-                        Case 7 • Low Priority • Account Administration
+                        Lab 7 • Stack Overflow
                     </div>
 
 
                     <h3>
-                        Legal Name Change
+                        Using a stack overflow to take control of a program
                     </h3>
 
 
                     <p>
-                        The final scenario involved a user who needed
-                        their last name changed following a marriage.
-                        Because the organization's email format was
-                        tied to the user's name, the email address also
-                        needed to be updated.
+                        A simple vulnerability that can arise especially with mismangaed memory in C code is stack overflows (no not the website).
+                        Here we set up a payload that should not be normally accessed. To complete this we use a script first to try to overflow without our 
+                        attack, this in GDB will reveal an offset. 
                     </p>
 
 
                     <p>
-                        After verifying the user's identity, the
-                        directory profile was opened. The display name
-                        was updated, a new email address reflecting the
-                        change was assigned, and the previous address
-                        was configured as an alias.
-                    </p>
-
-
-                    <p>
-                        The change could be observed directly after
-                        saving the profile, making this a good example
-                        of a ticket where the technician can immediately
-                        see the result rather than relying on a separate
-                        technical verification.
+                        In the final script, we spawn a process, build a payload for the overflow with our functions memory address appened to the end. When that
+                        payload is successfully sent we can see our method executed. 
                     </p>
 
 
@@ -2235,23 +2205,15 @@ body {
 
                         <ul>
                             <li>
-                                Verify identity before changing account
-                                information.
+                                Stack overflow causes and prevention
                             </li>
 
                             <li>
-                                Consider dependencies such as email
-                                addresses when changing user information.
+                                Practice with pwntools, and gdb
                             </li>
 
                             <li>
-                                Preserve the previous email as an alias
-                                when required.
-                            </li>
-
-                            <li>
-                                Confirm the change and communicate clearly
-                                with the user.
+                                Payload construction
                             </li>
                         </ul>
 
@@ -2259,7 +2221,7 @@ body {
 
 
                     <a
-                        href="src/CSC472 Lab Report Alex Cooper.pdf"
+                        href="src/CSC472_Lab_Report_Alex_Cooper.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="case-study-button"
@@ -2272,41 +2234,27 @@ body {
                  <article class="case-panel case-panel-8">
 
                     <div class="case-meta">
-                        Case 8 • Low Priority • Account Administration
+                        Lab 8 • Gadgets & Return Oriented Programming (ROP)
                     </div>
 
 
                     <h3>
-                        Legal Name Change
+                        Using stack overflow in tandem with gadgets for a multi-step exploit
                     </h3>
 
 
                     <p>
-                        The final scenario involved a user who needed
-                        their last name changed following a marriage.
-                        Because the organization's email format was
-                        tied to the user's name, the email address also
-                        needed to be updated.
+                        To begin this lab we do the same steps as the previous lab and find the offset pattern we will need to model the payload. 
+                        We essenitally want to use some built in gadget, which are remenants from the original code to cause unintended effects.
+                        ROP finds us using the return addresses of gadgets to jump around the code and call methods in a stack. 
                     </p>
 
 
                     <p>
-                        After verifying the user's identity, the
-                        directory profile was opened. The display name
-                        was updated, a new email address reflecting the
-                        change was assigned, and the previous address
-                        was configured as an alias.
+                        An important gadget is one that can pop things off the stack then return to a designated area. In the case of this lab it was also
+                        key to have a gadget that could spawn a shell to give us access over the system. With a carefully crafted payload of offset, gadgets, and a 
+                        shell spawning method we can gain escalated privileges.
                     </p>
-
-
-                    <p>
-                        The change could be observed directly after
-                        saving the profile, making this a good example
-                        of a ticket where the technician can immediately
-                        see the result rather than relying on a separate
-                        technical verification.
-                    </p>
-
 
                     <div class="case-takeaways">
 
@@ -2316,23 +2264,15 @@ body {
 
                         <ul>
                             <li>
-                                Verify identity before changing account
-                                information.
+                                Information and practice with gadgets and ROP
                             </li>
 
                             <li>
-                                Consider dependencies such as email
-                                addresses when changing user information.
+                                Further practice with stack overflow and payload creation
                             </li>
 
                             <li>
-                                Preserve the previous email as an alias
-                                when required.
-                            </li>
-
-                            <li>
-                                Confirm the change and communicate clearly
-                                with the user.
+                                practice with gdb tool and tools for binary analysis
                             </li>
                         </ul>
 
@@ -2353,7 +2293,7 @@ body {
                  <article class="case-panel case-panel-9">
 
                     <div class="case-meta">
-                        Case 9 • Low Priority • Account Administration
+                        Lab 9 • 
                     </div>
 
 
@@ -2434,7 +2374,7 @@ body {
                  <article class="case-panel case-panel-10">
 
                     <div class="case-meta">
-                        Case 10 • Low Priority • Account Administration
+                        Lab 10 • Low Priority • Account Administration
                     </div>
 
 
@@ -2518,7 +2458,7 @@ body {
          <article class="case-panel case-panel-11">
 
                     <div class="case-meta">
-                        Case 11 • Low Priority • Account Administration
+                        Lab 11 • Low Priority • Account Administration
                     </div>
 
 
